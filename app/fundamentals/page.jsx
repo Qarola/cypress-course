@@ -66,7 +66,8 @@ const items = [
 export default function FundamentalsPage(){
     return (
         <main className={styles.main}>
-            <h1 className={styles.header}>
+          {/* se agrega un atributo de prueba de datos --> data-test */}
+            <h1 data-test="fundamentals-header" className={styles.header}>
                 Testing Fundamentals
             </h1>
             <ItemsAccordion items={items} />
