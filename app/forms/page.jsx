@@ -40,13 +40,15 @@ export default function FormsPage(){
             <h1 className={styles.header}>Testing Forms</h1>
             <ItemsAccordion items={items} />
             <TextField 
+            /* Agrego el atributo data-test para hacer la prueba en este punto. */
+            data-test="subscribe-form"
             className={styles.input} 
             label="Email" 
             variant="filled" 
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             />
-            <Button onClick={() => {
+            <Button data-test="subscribe-button" onClick={() => {
                 if (!inputValue.includes('.com') ){
                     setSubMessage(`Invalid email: ${inputValue}!`)
                 } else if (inputValue.length){
