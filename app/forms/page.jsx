@@ -40,7 +40,6 @@ export default function FormsPage(){
             <h1 className={styles.header}>Testing Forms</h1>
             <ItemsAccordion items={items} />
             <TextField 
-            /* Agrego el atributo data-test para hacer la prueba en este punto. */
             data-test="subscribe-form"
             className={styles.input} 
             label="Email" 
@@ -48,8 +47,8 @@ export default function FormsPage(){
             value={inputValue}
             onChange={e => setInputValue(e.target.value)}
             />
-            <Button data-test="subscribe-button" onClick={() => {
-                if (!inputValue.includes('.com') ){
+            <Button data-test="subscribe-button"  onClick={() => {
+                if (inputValue && !inputValue.includes('.com')){
                     setSubMessage(`Invalid email: ${inputValue}!`)
                 } else if (inputValue.length){
                     setSubMessage(`Successfully subbed: ${inputValue}!`)
